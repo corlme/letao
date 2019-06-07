@@ -37,8 +37,14 @@ ul {
     top: 0;
     left: 0;
     background-color: #222D32;
-    z-index: 999;  //显示层级最高，在最上面，防止被其他元素覆盖
+/*//显示层级最高，在最上面，防止被其他元素覆盖*/
+    z-index: 999;
+    transition: all 1s;
 }
+.lt_aside.hidemenu {
+    left: -180px;
+}
+
 .lt_aside .brand {
     width: 100%;
     height: 50px;
@@ -94,9 +100,11 @@ ul {
     background-color: pink;
     padding-left: 180px;
     padding-top: 50px;
+    transition: all 1s;
 }
-
-
+.lt_main.hidemenu {
+    padding-left: 0;
+}
 
 .lt_topbar {
     height: 50px;
@@ -106,6 +114,10 @@ ul {
     top: 0;
     left: 0;
     padding-left: 180px;
+    transition:all 1s;
+}
+.lt_topbar.hidemenu {
+    padding-left: 0;
 }
 .lt_topbar a {
     /*因为 a 已经有浮动了，所以不需要加 display:block*/

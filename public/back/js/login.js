@@ -68,8 +68,7 @@ $(function(){
     $("#form").on('success.form.bv', function( e ){
         // 阻止默认的表单提交
         e.preventDefault();
-
-        console.log("校验成功后，表单提交 被阻止了");
+        // console.log("校验成功后，表单提交 被阻止了");
 
         // 使用ajax提交
         $.ajax({
@@ -112,7 +111,6 @@ $(function(){
     })
 
 });
-
 
 
 
