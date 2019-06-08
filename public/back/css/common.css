@@ -16,18 +16,34 @@ ul {
     margin: 0;
     padding: 0;
 }
-.panel .panel-title {
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    font-size: 20px;
+
+* {
+    margin:0;
+    padding: 0;
+    list-style: none;
 }
+.red {
+    color: #A94442;
+}
+
 .mt_150 {
     margin-top: 150px;
 }
 .mt_20 {
     margin-top: 20px;
 }
+.mb_20 {
+    margin-bottom: 20px;
+}
+
+.panel .panel-title {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+}
+
+
 
 /*侧边栏样式*/
 .lt_aside {
