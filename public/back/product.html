@@ -142,7 +142,8 @@
                         </div>
                         <!--隐藏域:存储 brandId 存储品牌-->
                         <input type="hidden" name="brandId">
-
+                        <!--产品上下架 默认上架 值为 1-->
+                        <input type="hidden" value="1">
                     </div>
 
                     <div class="form-group">
@@ -168,16 +169,19 @@
 
                     <div class="form-group">
                         <label class="btn btn-default" for="fileupload" >上传图片</label>
-                        <!--指定 name 将来后台用于接收文件-->
-                        <!--指定 data-url 指定后台接口地址-->
-                        <input type="file" id="fileupload" name="pic1" data-url="/category/addSecondCategoryPic" style="display:none">
+                        <!--准备结构，需要通过插件帮我们发送文件上传请求 需要配置 name 和 data-url 接口地址-->
+                         <!--name 用于后台接收图片-->
+                        <!--data-url 后台接口地址-->
+                        <!--multiple 多文件上传配置-->
+                        <input type="file" id="fileupload" name="pic1" multiple data-url="/product/addProductPic" style="display:none">
                     </div>
-                    <!--隐藏域-->
 
                     <div class="form-group" id="imgBox">
-                        <img src="images/none.png" width="100" alt="">
-                        <input type="hidden" name="brandLogo">
+                        <!--<img src="images/none.png" width="100" alt="">-->
+                        <!--隐藏域 ：用于标记当前图片上传的状态-->
+                        <input type="hidden" name="picStatus">
                     </div>
+
                 </div>
                 <!--底部-->
                 <div class="modal-footer">
