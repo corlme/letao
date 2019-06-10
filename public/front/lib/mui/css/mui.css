@@ -494,6 +494,7 @@ a:active
 }
 
 /* before 防塌陷, after 清浮动 */
+/*双伪元素： before 是为了防止塌陷  after 才是清除浮动*/
 .mui-clearfix:before, .mui-clearfix:after
 {
     display: table;
@@ -751,7 +752,10 @@ p
 
     width: 100%;
 
-    /* 使用了 transform 的 3d 属性, 可以开启 gpu 硬件加速 */
+    /* transform 如果设置了 3d 属性，会开启手机的 gpu 硬件加速
+      可以让手机以最高的性能渲染该元素。
+      面试题：有没有什么可以优化手机轮播图的？ transform 如果设置了 3d 属性
+     */
     -webkit-transform: translateZ(0);
             transform: translateZ(0);
 }
