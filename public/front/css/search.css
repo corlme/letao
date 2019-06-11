@@ -1,0 +1,27 @@
+.lt_history{
+    padding: 10px;
+    font-size: 14px;
+    color: #666;
+}
+.lt_history .title{
+    /*加高 可以清楚浮动*/
+    height: 30px;
+    line-height: 30px;
+}
+.lt_history .content {
+    border: 1px dashed red;
+}
+.lt_history .content li {
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px dashed red;
+}
+.lt_history .content li:last-child{
+    border-bottom: 0;
+}
+.lt_history .content li a{
+    padding: 0 10px;
+}
+.lt_history .content li i{
+    line-height: 30px;
+}
