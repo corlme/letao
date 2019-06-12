@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--移动端视口：存在目的，因为早期手机屏幕很小，为了能够查看 pc 网页。-->
+    <!--早期网页宽度都是 980px，可以进行缩放-->
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <title>乐淘商城移动端</title>
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!--引入图标字体库插件-->
+    <link rel="stylesheet" href="./lib/fa/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/searchList.css">
+</head>
+<body>
+
+<!--乐淘商城 全屏容器-->
+<div class="lt_container">
+    <!--乐淘头部-->
+    <div class="lt_header">
+        <!--返回上一页：-->
+        <!--history.back();-->
+        <!--history.eq(-1);-->
+        <a href="javascript:history.back();" class="icon-left"><i class="mui-icon mui-icon-back"></i></a>
+        <h3>搜索中心</h3>
+    </div>
+
+
+
+    <!--乐淘主体-->
+    <div class="lt_main">
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <!--这里放置真实显示的DOM内容-->
+
+                <!--搜索模块-->
+                <div class="lt_search">
+                    <input type="text" class="search_input" placeholder="请输入搜索关键词">
+                    <button class="mui-btn mui-btn-primary search_btn">搜索</button>
+                </div>
+                
+                <!--排序-->
+                <div class="lt_sort">
+                    <a href="#">上架时间<i class="fa fa-angle-down"></i></a>
+                    <a href="#" class="current">价格<i class="fa fa-angle-down"></i></a>
+                    <a href="#">库存<i class="fa fa-angle-down"></i></a>
+                    <a href="#">折扣<i class="fa fa-angle-down"></i></a>
+                </div>
+
+                <!--产品部分-->
+                <div class="lt_product">
+                    <!--挖个坑-->
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!--乐淘底部-->
+    <div class="lt_footer">
+        <ul>
+            <li>
+                <a href="index.html">
+                    <i class="fa fa-home"></i>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="category.html">
+                    <i class="fa fa-bars"></i>
+                    <p>分类页</p>
+                </a>
+            </li>
+            <li>
+                <a href="cart.html">
+                    <i class="fa fa-shopping-cart"></i>
+                    <p>购物车</p>
+                </a>
+            </li>
+            <li>
+                <a href="user.html">
+                    <i class="fa fa-user"></i>
+                    <p>首页</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+<script type="text/html" id="productTpl">
+    <ul>
+        {{ each data v i}}
+            <li class="lt_product_item">
+                <a href="#">
+                    <img src="{{ v.pic[0].picAddr }}" alt="">
+                    <!--mui-ellipsis-2 是mui插件提供的类 控制多行溢出（就是多的部分以 ... 省略号代替）-->
+                    <p class="mui-ellipsis-2">{{ v.proName }}</p>
+                    <p>
+                        <span class="price">¥{{ v.price }}</span>
+                        <span class="oldPrice">¥{{ v.oldPrice }}</span>
+                    </p>
+                    <button class="mui-btn mui-btn-primary">立即购买</button>
+                </a>
+            </li>
+        {{ /each }}
+    </ul>
+</script>
+
+
+<script src="./lib/mui/js/mui.js"></script>
+<script src="./lib/zepto/zepto.min.js"></script>
+<script src="./lib/artTemplate/template-web.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/searchList.js"></script>
+</body>
+</html>

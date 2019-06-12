@@ -98,7 +98,7 @@ img {
     position: relative;
 }
 
-/*公用的搜索框样式*/
+/*公共的搜索框样式*/
 .lt_search {
     padding: 10px;
     position: relative;
@@ -121,4 +121,35 @@ img {
     right: 10px;
     top: 10px;
     border-radius: 0 5px 5px 0;
+}
+
+/*公共的产品样式*/
+/*产品样式*/
+.lt_product ul{
+    padding: 10px;
+}
+.lt_product_item{
+    float: left;
+    width: 48%;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+}
+.lt_product .lt_product_item:nth-child(odd){
+    margin-right: 4%;
+}
+.lt_product_item .price {
+    color: red;
+}
+.lt_product_item .oldPrice {
+    text-decoration: line-through;
+}
+.lt_product_item img {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+.lt_product_item .mui-ellipsis-2{
+    height: 40px;
 }

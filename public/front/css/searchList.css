@@ -1,0 +1,16 @@
+.lt_sort{
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    text-align: center;
+    background-color: #eee;
+    border-radius: 5px;
+}
+.lt_sort a {
+    float: left;
+    width: 25%;
+    color: #666;
+}
+.lt_sort a.current{
+    color: orange;
+}
