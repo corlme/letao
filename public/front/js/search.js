@@ -95,6 +95,12 @@ $(function(){
     $(".search_btn").click(function(){
         // 获取输入框的关键词
         var key = $(".search_input").val().trim(); //trim()用于去取字符串两端的空白字符
+        if( key === "" ){
+            mui.toast("请输入搜索关键字",{
+                duration:3000 //显示时长
+            });
+            return;
+        }
 
         // 获取数组
         // var history = localStorage.getItem("search_list");
