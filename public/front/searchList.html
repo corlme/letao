@@ -42,7 +42,7 @@
                 <!--排序-->
                 <div class="lt_sort">
                     <a href="#">上架时间<i class="fa fa-angle-down"></i></a>
-                    <a data-type="price" href="#" class="current">价格<i class="fa fa-angle-down"></i></a>
+                    <a data-type="price" href="#">价格<i class="fa fa-angle-down"></i></a>
                     <a data-type="num" href="#">库存<i class="fa fa-angle-down"></i></a>
                     <a href="#">折扣<i class="fa fa-angle-down"></i></a>
                 </div>
@@ -50,7 +50,7 @@
                 <!--产品部分-->
                 <div class="lt_product">
                     <!--挖个坑-->
-                    <div class="loading"></div>
+                    <!--<div class="loading"></div>-->
                 </div>
 
             </div>
@@ -90,10 +90,10 @@
 </div>
 
 <script type="text/html" id="productTpl">
-    <ul>
+    <ul class="mui-clearfix">
         {{ each data v i}}
             <li class="lt_product_item">
-                <a href="#">
+                <a href="product.html?productId={{ v.id }}" data-id="{{ v.id }}">
                     <img src="{{ v.pic[0].picAddr }}" alt="">
                     <!--mui-ellipsis-2 是mui插件提供的类 控制多行溢出（就是多的部分以 ... 省略号代替）-->
                     <p class="mui-ellipsis-2">{{ v.proName }}</p>
@@ -113,6 +113,6 @@
 <script src="./lib/zepto/zepto.min.js"></script>
 <script src="./lib/artTemplate/template-web.js"></script>
 <script src="./js/common.js"></script>
-<script src="./js/searchList.js"></script>
+<script src="./js/searchList2.js"></script>
 </body>
 </html>
