@@ -191,7 +191,4 @@ $(function() {
         location.href = "product.html?productId=" + id;
     })
 
-
-
-
 });
