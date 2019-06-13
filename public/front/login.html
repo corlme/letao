@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--移动端视口：存在目的，因为早期手机屏幕很小，为了能够查看 pc 网页。-->
+    <!--早期网页宽度都是 980px，可以进行缩放-->
+    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0">
+    <title>乐淘商城移动端</title>
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!--引入图标字体库插件-->
+    <link rel="stylesheet" href="./lib/fa/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/login.css">
+</head>
+<body>
+<!--1、插件 mui（主要用于移动端） 的字体图标 的使用 -->
+<!--<span class="mui-icon mui-icon-weixin"></span>-->
+<!--<span class="mui-icon mui-icon-camera"></span>-->
+<!--2、插件 font-awesome 的字体图标 的使用-->
+<!--<span class="fa fa-arrows-alt"></span>-->
+<!--<span class="fa fa-tablet"></span>-->
+<!--<span class="fa fa-space-shuttle"></span>-->
+
+<!--乐淘商城 全屏容器-->
+<div class="lt_container">
+    <!--乐淘头部-->
+    <div class="lt_header">
+        <a href="index.html" class="icon-left"><i class="mui-icon mui-icon-back"></i></a>
+        <h3>登录</h3>
+    </div>
+
+
+
+    <!--乐淘主体-->
+    <div class="lt_main">
+        <!--区域滚动-->
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <form class="mui-input-group">
+                    <div class="mui-input-row">
+                        <label>用户名</label>
+                        <input type="text" id="username" class="mui-input-clear" placeholder="请输入用户名">
+                    </div>
+                    <div class="mui-input-row">
+                        <label>密码</label>
+                        <input type="password" id="password" class="mui-input-password" placeholder="请输入密码">
+                    </div>
+                    <div class="mui-button-row">
+                        <button type="button" class="mui-btn mui-btn-primary" id="loginBtn">登录</button>
+                        <button type="button" class="mui-btn mui-btn-danger" >重置</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--乐淘底部-->
+    <div class="lt_footer">
+        <ul>
+            <li>
+                <a href="index.html">
+                    <i class="fa fa-home"></i>
+                    <p>首页</p>
+                </a>
+            </li>
+            <li>
+                <a href="category.html">
+                    <i class="fa fa-bars"></i>
+                    <p>分类页</p>
+                </a>
+            </li>
+            <li>
+                <a href="cart.html">
+                    <i class="fa fa-shopping-cart"></i>
+                    <p>购物车</p>
+                </a>
+            </li>
+            <li>
+                <a href="user.html" class="current">
+                    <i class="fa fa-user"></i>
+                    <p>个人中心</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+
+
+<script src="./lib/mui/js/mui.js"></script>
+<script src="./lib/zepto/zepto.min.js"></script>
+<script src="./js/common.js"></script>
+<script src="./js/login.js"></script>
+</body>
+</html>
