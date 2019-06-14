@@ -66,7 +66,70 @@ $(function(){
             }
          })
 
-    })
+    });
+
+
+    // 4. 编辑功能
+    $(".lt_main").on("tap",".btn_edit",function(){
+
+        // 获取 数据
+        // 在 html5 里面有一个方法 dataset 可以一次性获取所有的 自定义属性的值
+         var obj = this.dataset;
+         var id = obj.id;
+        console.log(obj);
+        // 生成模板
+         var htmlStr = template("editTpl",obj );
+
+         // 在 mui 中 会将模板中的 \n 换行符 生成 <br> 自动换行
+         //  我们这里不需要，所有要将 \n 去掉
+        htmlStr = htmlStr.replace(/\n/g,"");  // 将全局的 \n 替换成 空
+
+        // 弹出确认框
+        mui.confirm( htmlStr ,"编辑商品",["确认","取消"], function( e ){
+            if ( e.index === 0 ){
+                // 说明用户点击的确认按钮
+                //   这时候应该获取数据 发送ajax请求
+                var size = $(".lt_size span.current").text(); //尺码
+                var num = $(".mui-numbox-input").val();  // 数量
+
+                $.ajax({
+                    type:"post",
+                    url:"/cart/updateCart",
+                    data:{
+                        id: id,
+                        size: size,
+                        num: num
+                    },
+                    dataType:"json",
+                    success:function( info ){
+                        console.log(info);
+                       if( info.success ){
+                           // 修改成功 重新渲染页面 这里调用一次 下拉刷新 即可
+                           mui(".mui-scroll-wrapper").pullRefresh().pulldownLoading();
+                       }
+
+                    }
+                })
+
+            }
+
+        });
+
+        // 数量加减 初始化
+        mui(".mui-numbox").numbox();
+    });
+
+
+    // 5. 让尺码可以被选中
+    // 这里模态框的父元素，直接是 body
+    $("body").on("tap",".lt_size span",function(){
+        $(this).addClass("current").siblings().removeClass("current");
+    });
+
+
+
+
+
 
 
 });

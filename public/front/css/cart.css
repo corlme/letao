@@ -25,3 +25,7 @@
 .lt_main .cart_item .mui-table-cell {
     display: block;
 }
+.lt_size,
+.lt_num{
+    text-align: left;
+}
